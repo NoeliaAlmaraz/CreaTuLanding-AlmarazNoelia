@@ -23,6 +23,15 @@ El proyecto está dividido en dos partes principales:
 2. crear carpetas para componentes 
 3. Crear componentes para cada sección de la aplicación.
 4. hemos empezado a darle funcionalidad a la parte del cart haciendo que se muestre u oculte cuando el usuario clikea en el cart.
-5. ...
+5. Llamada a la API de OpenLibrary mediante fetch
+6. implementacion de hooks (useState, useEffect,UseParams)
+7. implementacion de navegacion con react-router-dom
+8. implementacion de eventos (onChange para los filtros, onClick para el boton de añadir al carrito)
+9. implementacion de estilos
+10. quererme morir!!!! .....
+
+Me costó muchísimo trabajo la parte de itemDetail, no sabía como acceder a los datos. Os pido que me deis mucha caña y corregirme todo lo que podeis, he echo muchas cosas a prueba y error y creo que con las correcciones lo entenderé mejor  y podre depurar mas el codigo.
+
+
 
 

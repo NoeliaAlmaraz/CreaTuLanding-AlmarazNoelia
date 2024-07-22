@@ -35,6 +35,10 @@ nav ul li a {
   color: black;
 }
 
+nav ul li a:hover {
+  color: #fb9301;
+}
+
 .cart-container {
   position: relative;
 }
@@ -52,3 +56,16 @@ nav ul li a {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
+
+.cart-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+}
+
+.cart-button svg:hover {
+
+  fill: #fb9301;
+}
+
