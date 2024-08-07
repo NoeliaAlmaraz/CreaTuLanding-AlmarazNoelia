@@ -19,6 +19,7 @@ import Item from '../item/Item'
               price={element.want_to_read_count} 
               key={index}
               index = {index}
+
   
               />
 

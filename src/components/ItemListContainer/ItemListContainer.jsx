@@ -1,18 +1,23 @@
 import React from 'react'
-import { useState  } from 'react'
+import { useState} from 'react'
 import './ItemListContainer.css'
-import Searcher from '../Searcher/Searcher';
-import ItemList from '../ItemList/ItemList';
-import Contact from '../Contact/Contact';
+import Loader from './Loader/Loader.jsx';
+import Searcher from './Searcher/Searcher.jsx';
+import ItemList from './ItemList/ItemList.jsx';
+import Contact from '../NavBar/Contact/Contact';
+import { useAppContext } from '../Context/Context.jsx';
 
 
 
 
-function ItemListContainer({item}) {
+function ItemListContainer() {
 
+  
+  const {item} = useAppContext();
   const [isChecked, setIsChecked] = useState(false);
   const [search, setSearch] = useState('');
 
+  
 
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
@@ -39,7 +44,7 @@ function ItemListContainer({item}) {
     return matchesSearch && matchesEbookAccess;
 
   });
-   console.log(results)
+
   return ( 
     <div>
       <Searcher 
@@ -53,7 +58,7 @@ function ItemListContainer({item}) {
         {
 
             item.length === 0 ?
-            <h2>cargando...</h2>
+            <Loader/>
             :
             
             <ItemList item={results}/>

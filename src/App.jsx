@@ -3,53 +3,33 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
-import NotFound from './components/NotFound/NotFound';
-import { useState, useEffect,} from 'react';
-import Contact from './components/Contact/Contact';
-import Home from './components/Home/Home';
-import ItemListDetailContainer from './components/ItemListDetailContainer/ItemListDetailContainer';
+import NotFound from './components/NavBar/NotFound/NotFound';
+import { ContextProvider, useAppContext } from './components/Context/Context.jsx';
+import Contact from './components/NavBar/Contact/Contact';
+import Home from './components/NavBar/Home/Home';
+import ItemListDetailContainer from './components/ItemListContainer/ItemListDetailContainer/ItemListDetailContainer';
+import Orders from './components/NavBar/Orders/Orders';
 
 
+function App() {
 
-
-
-function App({}) {
-
-  const [item, setItem]= useState([]);
-  
-  
-  useEffect(() => {
-    fetch('https://openlibrary.org/search.json?q=cat')
-    .then(response => response.json())
-    .then(data => { 
-
-      setItem(data.docs);
-
-    }).catch(err => console.log(err));
-  }, [item, setItem]);
-
-
-  console.log(item)
-
-  return (
-    <>
-      
+  return ( 
       <BrowserRouter>
-        <NavBar />
-        <Routes>
+        <ContextProvider>
+          <NavBar />
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Inicio" element={<Home/>} />
-          <Route path="/Producto"  element={<ItemListContainer item={item} />} />
+          <Route path="/Producto"  element={<ItemListContainer  />} />
           <Route path="/Contacto"  element={<Contact />} />
-          <Route path='/DetalleProducto/:id' element={ <ItemListDetailContainer item={item}  />} />
+          <Route path='/DetalleProducto/:id' element={ <ItemListDetailContainer  />} />
+          <Route path="/Orders" element={<Orders />} />
           <Route path="*" element={<NotFound/>} />
-        </Routes>
+          </Routes>
+        </ContextProvider>
       </BrowserRouter>
+  );
 
-
-      
-    </>
-  )
 }
 
 export default App

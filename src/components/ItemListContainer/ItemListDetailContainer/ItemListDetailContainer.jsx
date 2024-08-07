@@ -1,15 +1,21 @@
 import React from 'react';
-
+import Loader from '../Loader/Loader.jsx';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import { useAppContext } from '../../Context/Context.jsx';
 
 
-function ItemListDetailContainer({item}) {
+function ItemListDetailContainer() {
+
+  const {item} = useAppContext();
+
   return (
     <section className='item-list-container'> 
         {
 
             item.length === 0 ?
-            <h2>cargando...</h2>
+            <>
+                <Loader/>
+            </>
             :
             <div>
                <ItemDetail item={item}/>
