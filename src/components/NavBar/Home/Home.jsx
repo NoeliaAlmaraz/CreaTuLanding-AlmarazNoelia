@@ -18,7 +18,7 @@ import Contact from '../Contact/Contact';
                             <p>Bienvenido a nuestra librería en línea, donde encontrarás una amplia selección de libros para todos los gustos. Ya sea que busques aventuras, romance, misterio o conocimiento, aquí tenemos algo para ti. ¡Empieza a explorar y encuentra el libro perfecto para ti!</p>
                         </div>
                         <div className="hero-image">
-                            <img src="./public/assets/LOGO.png" alt="logo"  />
+                            <img src="/public/LOGO.png" alt="logo"  />
                         </div>
                     </div>
                 </div>

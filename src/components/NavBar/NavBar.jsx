@@ -21,7 +21,7 @@ function NavBar() {
     <header>
         <div>
             <Link to="/">
-                <img src="../src/assets/LOGO.png" alt="logo" />
+                <img src="/public/LOGO.png" alt="logo" />
             </Link>
 
             
