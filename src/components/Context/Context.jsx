@@ -104,7 +104,7 @@ const ContextProvider = ({ children }) => {
         icon: 'warning',
         confirmButtonText: 'OK'
       });
-      return; // Salir de la función si el carrito está vacío
+      return; 
     }
 
     try {
@@ -160,7 +160,7 @@ const ContextProvider = ({ children }) => {
     }
   }
 
-
+// Función para agregar un producto al carrito desde el detalle de producto 
   function addToCartDetail(index, quantity) {
     const itemIndex = item[index];
     const itemInCart = cart.find(cartItem => cartItem.id === itemIndex.id);
@@ -172,12 +172,14 @@ const ContextProvider = ({ children }) => {
           : cartItem
       );
       setCart(newCart);
+      localStorage.setItem('cart', JSON.stringify(newCart));
     } else {
       const newItem = { ...itemIndex, quantity };
       const newCart = [...cart, newItem];
       setCart(newCart);
+      localStorage.setItem('cart', JSON.stringify(newCart));
     }
-    localStorage.setItem('cart', JSON.stringify(newCart));
+
   }
 
 

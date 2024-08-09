@@ -2,26 +2,21 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { useAppContext } from '../../Context/Context.jsx';
 import { useState } from 'react';
+import './ItemDetail.css'
+import ItemCount from './ItemCount/ItemCount.jsx'
+
 
 
 
 
 function ItemDetail({item}) {
   
-
+  
   const {id} = useParams();
-  const {addToCartDetail} = useAppContext();
+
   
     const itemIndex = item[id];
 
-    const [quantity, setQuantity] = useState(itemIndex.quantity || 1); 
-    const handleQuantityChange = (e) => {
-      setQuantity(parseInt(e.target.value) || 1); 
-    };
-  
-    const handleAddToCart = () => {
-      addToCartDetail(id, quantity);
-    };
 
       
 
@@ -41,8 +36,7 @@ function ItemDetail({item}) {
             <h2>{title}</h2>
             <p >{authorName}</p>
             <p>{price/10}$</p>
-            <input type="number" value={quantity} onChange={handleQuantityChange} min="1" />
-            <button className='btn' onClick={handleAddToCart}>Añadir al carrito</button>
+            <ItemCount  itemIndex={itemIndex} />
         </article>
           
         )
