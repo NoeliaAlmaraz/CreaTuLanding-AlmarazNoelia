@@ -13,7 +13,6 @@ Bookstore App es una plataforma de comercio electrónico centrada en la venta de
 
 ### Tabla de Contenidos
 - Características Principales
-- Estructura del Proyecto
 - Uso
 - Detalles Técnicos
 - Dependencias
@@ -41,29 +40,6 @@ Bookstore App es una plataforma de comercio electrónico centrada en la venta de
 
 - Gestión de Pedidos: Los pedidos confirmados se almacenan en Firestore y están disponibles para revisión posterior.
 
-
-## Estructura del Proyecto
-
-El proyecto está organizado en una estructura modular para facilitar la escalabilidad y el mantenimiento.
-
-
-src/
-├── components/
-│   ├── CartWidgetContainer/
-│   ├── Context/
-│   ├── ItemListContainer/
-│   ├── NavBar/
-│   ├── ... (otros componentes)
-│ 
-├── App.jsx 
-├── App.css 
-├── assets/
-└── main.jsx
-
-
-- components: Contiene todos los componentes React, cada uno con su propia carpeta y archivos de estilo asociados.
-
-- assets: Imágenes y otros recursos estáticos.
 
 
 ## Componentes Clave
